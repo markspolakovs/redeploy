@@ -33,7 +33,7 @@ module.exports = function redeploy(options) {
 
       reddit.getSubreddit(subreddit)
         .updateStylesheet({
-            css: String(file.contents),
+            css: file.contents.toString(),
             reason: message
         }).then(function() {
           gulp.log('deployed', file.relative, 'to /r/' + subreddit)
